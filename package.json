@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-api-express",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Create a basic api with express",
   "main": "index.js",
   "scripts": {
