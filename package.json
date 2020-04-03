@@ -13,7 +13,7 @@
   "author": "Jose Luis Campos Bautista <bautistaj20@outlook.com>",
   "license": "MIT",
   "bin": {
-    "create-api-express": "bin/global.js"
+    "bootstrap-api-express": "bin/global.js"
   },
   "preferGlobal": true,
   "dependencies": {
@@ -22,10 +22,10 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bautistaj/create-api-express.git"
+    "url": "git+https://github.com/bautistaj/bootstrap-api-express.git"
   },
   "bugs": {
-    "url": "https://github.com/bautistaj/create-api-express/issues"
+    "url": "https://github.com/bautistaj/bootstrap-api-express/issues"
   },
-  "homepage": "https://github.com/bautistaj/create-api-express#readme"
+  "homepage": "https://github.com/bautistaj/bootstrap-api-express#readme"
 }

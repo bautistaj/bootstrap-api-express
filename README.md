@@ -1,5 +1,5 @@
 
-# create-api-express
+# bootstrap-api-express
 
 With this package you can create a basic structure of api project with [express](https://www.npmjs.com/package/express).
 
@@ -22,7 +22,7 @@ The package crete the next structure:
 ## Install
 
 ```npm
-npm install -g create-api-express
+npm install -g bootstrap-api-express
 
 ```
 
@@ -31,7 +31,7 @@ npm install -g create-api-express
 ```bash
 mkdir api
 cd api
-create-api-express
+bootstrap-api-express
 ```
 
 # Contributing
