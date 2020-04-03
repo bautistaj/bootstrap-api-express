@@ -1,0 +1,31 @@
+{
+  "name": "bootstrap-api-express",
+  "version": "1.0.0",
+  "description": "Create a basic api with express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "npm",
+    "express"
+  ],
+  "author": "Jose Luis Campos Bautista <bautistaj20@outlook.com>",
+  "license": "MIT",
+  "bin": {
+    "create-api-express": "bin/global.js"
+  },
+  "preferGlobal": true,
+  "dependencies": {
+    "chalk": "^4.0.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bautistaj/create-api-express.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bautistaj/create-api-express/issues"
+  },
+  "homepage": "https://github.com/bautistaj/create-api-express#readme"
+}
