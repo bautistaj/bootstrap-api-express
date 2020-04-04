@@ -1,7 +1,7 @@
 
 # bootstrap-api-express
 
-With this package you can create a basic structure of api project with [express](https://www.npmjs.com/package/express).
+With this package you can create a basic structure of api project with [express](https://www.npmjs.com/package/express) and [body-parser](https://www.npmjs.com/package/body-parser).
 
 The package crete the next structure:
 ```bash
@@ -23,7 +23,6 @@ The package crete the next structure:
 
 ```npm
 npm install -g bootstrap-api-express
-
 ```
 
 # Usage
@@ -34,8 +33,13 @@ cd api
 bootstrap-api-express
 ```
 
+Check end-point example with post, get, update and delete methods
+
+http://localhost:3000/api/example 
+
+
 # Contributing
-If someone wants to add or improve something, I invite you to collaborate directly in this repository: [random-msg](https://github.com/platzi/npm-random-msg)
+If someone wants to add or improve something, I invite you to collaborate directly in this repository: [bootstrap-api-express](https://github.com/bautistaj/bootstrap-api-express.git)
 
 # License
 create-api-express is released under the [MIT License](https://opensource.org/licenses/MIT).
