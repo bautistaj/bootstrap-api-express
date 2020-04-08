@@ -30,13 +30,19 @@ npm install -g bootstrap-api-express
 ```bash
 mkdir api
 cd api
-bootstrap-api-express
 ```
 
-Check end-point example with post, get, update and delete methods
+Execute **bootstrap-api-express** specifying the end-points you want to create, for example user and chat.
 
-http://localhost:3000/api/example 
+```bash
+bootstrap-api-express users chat
+```
+The package will create the end-points for user and chats, **if you don't specify anything the package will create the example end-point**.
 
+Run the next command and check the end-points created.
+```bash
+node index.js
+```
 
 # Contributing
 If someone wants to add or improve something, I invite you to collaborate directly in this repository: [bootstrap-api-express](https://github.com/bautistaj/bootstrap-api-express.git)
