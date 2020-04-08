@@ -11,13 +11,39 @@ const handleErrorToCreateFile = (error) => {
   if (error){
     console.log(chalk.red(`[Error] ${error}`));
   }
-  console.log(chalk.blue(`File created correctly`));
+  console.log(chalk.green(`File created correctly`));
 }
 
 const handleClose = (close) => {
   console.log(`stdout: ${close}`);
 }
 
+const indexHeader = `
+const express = require('express')
+const bodyParser = require('body-parser')
+`
+const indexConfiguration = `
+// application
+const app = express()
+
+//parser
+app.use(bodyParser.json())
+`
+
+const indexConfigServer = `
+app.use('/about', (req, res)=>{
+  res.status(200).send(
+    {
+      author: 'bautistaj',
+      github: 'https://github.com/bautistaj'
+    }
+  )
+});
+
+app.listen(3000, () => {
+  console.log(\`Api is listening in the port: http://localhost:3000/about\`)
+})
+`
 
 const network = `const express = require('express')
 const controller =  require('./controller')
@@ -182,16 +208,42 @@ const contents = {
   response
 }
 
+const creteIndexFile = async (pathFile, componentsPath) =>{
+  let indexImport = '';
+  let indexConfigEndpoints = '';
+
+  const components = fs.readdirSync(componentsPath);
+  
+  components.map(component => {
+    indexImport += `const ${component}Network = require('./components/${component}/network') \n`
+    indexConfigEndpoints += `app.use('/api/${component}', ${component}Network) \n`
+  })
+
+  const contentFile = `
+  ${indexHeader}
+  ${indexImport}
+  ${indexConfiguration}
+  ${indexConfigEndpoints}
+  ${indexConfigServer}
+  `
+
+  if(fs.existsSync(pathFile)){
+    await fs.unlinkSync(pathFile)
+  }
+
+  fs.appendFile(pathFile, contentFile, handleErrorToCreateFile)
+}
+
 const createFile = async (pathFile, type) => {
   if(!fs.existsSync(pathFile)){
-    console.log(chalk.blue(`Creating ${type} file`));
+    console.log(chalk.green(`Creating ${type} file`));
     fs.appendFileSync(pathFile, contents[type], handleErrorToCreateFile)
   }
 }
 
 const createDirectory = async (directory) => {
   if(!fs.existsSync(directory)){
-    console.log(chalk.blue(`Creating directory ${directory}`));
+    console.log(chalk.green(`Creating directory ${directory}`));
     fs.mkdirSync(directory);
   }
 }
@@ -200,15 +252,15 @@ const createDirectory = async (directory) => {
 const installDependencies = async () => {
   try {
 
-    console.log(chalk.blue('Initializing  git ...'));
+    console.log(chalk.green('Initializing  git ...'));
     await spawnSync('git', ['init']);
-    console.log(chalk.blue('Creating   gitignore ...'));
+    console.log(chalk.green('Creating   gitignore ...'));
     await spawnSync('npx', ['gitignore','node']);
-    console.log(chalk.blue('Initializing  project ...'));
+    console.log(chalk.green('Initializing  project ...'));
     await spawnSync('npm', ['init','-y']);
-    console.log(chalk.blue('Installing express ...'));
+    console.log(chalk.green('Installing express ...'));
     await spawnSync('npm', ['install','express']);
-    console.log(chalk.blue('Installing body-parse ...'));
+    console.log(chalk.green('Installing body-parse ...'));
     await spawnSync('npm', ['install','body-parse']);
   } catch (error) {
     handleError(error)
@@ -219,7 +271,8 @@ const installDependencies = async () => {
 module.exports = {
   createFile,
   createDirectory,
-  installDependencies
+  installDependencies,
+  creteIndexFile
 }
 
 
