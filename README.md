@@ -32,16 +32,28 @@ mkdir api
 cd api
 ```
 
-Execute **bootstrap-api-express** specifying the end-points you want to create, for example user and chat.
+Execute **bootstrap-api-express** specifying the end-points you want to create, for example users and chats.
 
 ```bash
-bootstrap-api-express users chat
+bootstrap-api-express users chats
 ```
 The package will create the end-points for user and chats, **if you don't specify anything the package will create the example end-point**.
 
 Run the next command and check the end-points created.
 ```bash
 node index.js
+```
+
+```
+GET    api/users/
+POST   api/users/
+DELETE api/users/:id
+UPDATE api/users/:id
+
+GET    api/chats/
+POST   api/chats/
+DELETE api/chats/:id
+UPDATE api/chats/:id
 ```
 
 # Contributing
