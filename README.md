@@ -1,4 +1,6 @@
 
+![npm](https://img.shields.io/npm/v/bootstrap-api-express?style=plastic)
+
 # bootstrap-api-express
 
 With this package you can create a basic structure of api project with [express](https://www.npmjs.com/package/express) and [body-parser](https://www.npmjs.com/package/body-parser).
